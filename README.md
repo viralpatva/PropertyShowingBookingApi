@@ -130,7 +130,7 @@ Content-Type: application/json
 
 ## AI use
 
-ChatGPT was used as a development assistant to review the assignment requirements, suggest the initial layered project structure, help draft implementation and integration-test changes, and diagnose failures from local build/test output. The developer reviewed the suggestions, applied the changes locally, and ran the test suite.
+Claude was used as a development assistant to review the assignment requirements, suggest the initial layered project structure, help draft implementation and integration-test changes, and diagnose failures from local build/test output. The developer reviewed the suggestions, applied the changes locally, and ran the test suite.
 
 Examples of AI assistance and review outcomes:
 
