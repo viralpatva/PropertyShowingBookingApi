@@ -1,0 +1,9 @@
+global using Microsoft.Data.Sqlite;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Extensions.Configuration;
+global using Microsoft.Extensions.DependencyInjection;
+global using PropertyShowing.Application.Abstractions;
+global using PropertyShowing.Application.Models;
+global using PropertyShowing.Domain.Entities;
+global using PropertyShowing.Infrastructure.Data;
+global using PropertyShowing.Infrastructure.Repositories;

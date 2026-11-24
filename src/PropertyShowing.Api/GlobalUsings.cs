@@ -1,8 +1,5 @@
-global using System.Net.Mail;
-global using Microsoft.AspNetCore.Http;
+global using PropertyShowing.Application.Abstractions;
 global using Microsoft.AspNetCore.Mvc;
-global using Microsoft.EntityFrameworkCore;
-global using PropertyShowing.Api.Data;
-global using PropertyShowing.Api.Entities;
-global using PropertyShowing.Api.Models;
-global using PropertyShowing.Api.Repositories;
+global using PropertyShowing.Application.Models;
+global using PropertyShowing.Application.Services;
+global using PropertyShowing.Infrastructure;
