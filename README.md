@@ -139,5 +139,3 @@ Examples of AI assistance and review outcomes:
 - SQLite provider limitations surfaced when ordering `DateTimeOffset` values in queries for booking history and slot listing. Those query operations were adjusted to run after materialization in .NET. This is acceptable for the small assignment dataset, but it is a scalability limitation to revisit for larger datasets.
 - An earlier README statement said Swagger was enabled in Development. Code review showed that Swagger was not configured, so that statement was removed and the limitation is now stated accurately.
 - AI-generated changes were not treated as verified merely because they were suggested. The developer ran `dotnet test PropertyShowing.sln` locally and confirmed 25 test cases passed with no failures.
-
-The final implementation should still be reviewed and explained by the developer during the follow-up interview. AI assistance does not replace understanding the booking rules, transaction boundaries, concurrency strategy, validation, or trade-offs described above.
