@@ -1,0 +1,13 @@
+## .NET build output
+bin/
+obj/
+*.user
+*.suo
+.vs/
+.idea/
+
+## Test results and local databases
+TestResults/
+*.db
+*.db-shm
+*.db-wal
