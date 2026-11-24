@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- MediatR 12.x is the last Apache-licensed line; newer majors need a license key. -->
+    <PackageReference Include="MediatR" Version="12.4.1" />
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.0" />
+    <!-- No EF Core here on purpose: persistence is reached only through the interfaces in Abstractions. -->
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShowingBooking.Domain\ShowingBooking.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
