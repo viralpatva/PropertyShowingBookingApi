@@ -97,8 +97,22 @@ Errors are ProblemDetails with a stable `code` field: **400** `validation_failed
 
 ## AI use
 
-**What I used it for:** drafting the requirements analysis and assumptions, proposing the architecture, generating the first version of the domain, handlers, endpoints and tests.
+I used an AI assistant (Claude) throughout, as the brief allows. I wrote the working prompt first, with every business rule and edge case, and told it to follow a fixed process: list ambiguities and assumptions, propose the design, wait for my approval, then build in small slices.
 
-**What I changed or rejected:** _TODO: fill in honestly after reviewing the code. For example: assumptions I disagreed with, naming or structure I changed, rules I re-checked against the brief._
+**What I used it for**
+- Turning the brief into a list of ambiguities and proposed assumptions (strict "before the slot starts", what "active booking" means, which states use seats, error codes).
+- Proposing the architecture, entity model, transition table and the concurrency approach.
+- Generating the first version of the domain, handlers, endpoints, unit tests, integration tests and this README.
+- Organising the git history into one commit per development phase.
 
-**What it got wrong:** _TODO: fill in honestly. The generated code was written without being compiled or run in the AI's workspace, so list every build error, failing test or wrong behaviour you found when you first ran `dotnet test`._
+**What I changed or rejected**
+- **Architecture.** The first version let the Application layer use EF Core directly (handlers saw `DbSet` and `Include`). I asked for stricter clean architecture, so persistence now sits behind `ISlotRepository`, `IBookingRepository` and `IUnitOfWork`, the EF Core package was removed from the Application project, and an architecture test guards the dependency rule.
+- **Git history.** The first history was a few large commits. I asked for it to be rebuilt as phase-wise commits (domain, unit tests, application, infrastructure, API, integration tests, concurrency tests, architecture tests, docs).
+- **Target framework.** I kept the project on .NET 8 because the brief asks for it, even though my usual stack is newer.
+- **Assumptions.** I reviewed the assumptions table before approving the design, and I can defend each one in the interview.
+
+**What it got wrong**
+- The assistant had no .NET SDK in its workspace, so it could not compile or run anything. None of the generated code or tests was verified when it was written. The first real build and test run was on my machine.
+- Its first design leaked EF Core into the Application layer (see above).
+- Its first commit history did not show the phases of development (see above).
+- _Build errors and failing tests I found on my first `dotnet test` run, and how I fixed them: add here after running the tests._
